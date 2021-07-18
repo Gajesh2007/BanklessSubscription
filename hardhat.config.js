@@ -35,9 +35,4 @@ module.exports = {
     artifacts: "./artifacts"
   },
   solidity: "0.8.0",
-  etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: "V91J1BDBH6W5RT7K35SQFEKEB6UW6SIF5P"
-  }
 };
