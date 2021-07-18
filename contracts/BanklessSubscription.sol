@@ -43,9 +43,9 @@ contract BanklessSubscription is Ownable, ERC721URIStorage {
 
         // update user validity
         if (user.validTill > 0) {
-            user.validTill = user.validTill.add(2592000);
+            user.validTill = user.validTill.add(2592000*months);
         } else {
-            user.validTill = block.timestamp + 2592000;
+            user.validTill = block.timestamp + 2592000*months;
             mintNFT();
         }
         return true;
