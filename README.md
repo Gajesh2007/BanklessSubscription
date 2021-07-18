@@ -32,4 +32,8 @@ Get soft consensus in Discord, then forum proposal.As this doesn’t require fun
 
 ## CONCLUSION
 
+<<<<<<< HEAD
 An easy and straightforward way of getting revenue and a way of getting people onboard Discord in a temporary manner.
+=======
+An easy and straightforward way of getting revenue and a way of getting people onboard Discord in a temporary manner.
+>>>>>>> c192ba02e12d2cc6cedbb5e2abb2f3956efcd82c
