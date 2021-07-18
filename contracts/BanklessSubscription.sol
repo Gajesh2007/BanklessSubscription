@@ -35,21 +35,19 @@ contract BanklessSubscription is Ownable, ERC721URIStorage {
     }
 
     // Buy NFT
-    function buyNFT() external returns (bool) {
+    function buyNFT(uint256 months) external returns (bool) {
         UserInfo storage user = userInfo[msg.sender];
 
         // Ensure an approval is done here.
-        bank.transferFrom(msg.sender, address(this), 2000000000000000000000); // Transfer tokens from sender to contract, external fees WILL apply, so be careful with distribution.
+        bank.transferFrom(msg.sender, address(this), 2000000000000000000000*months); // Transfer tokens from sender to contract, external fees WILL apply, so be careful with distribution.
 
         // update user validity
         if (user.validTill > 0) {
             user.validTill = user.validTill.add(2592000);
         } else {
             user.validTill = block.timestamp + 2592000;
+            mintNFT();
         }
-
-        // Mint NFT
-        mintNFT();
         return true;
     }
 
