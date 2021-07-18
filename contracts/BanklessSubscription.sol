@@ -39,7 +39,7 @@ contract BanklessSubscription is Ownable, ERC721URIStorage {
         UserInfo storage user = userInfo[msg.sender];
 
         // Ensure an approval is done here.
-        bank.transferFrom(msg.sender, address(this), 200000000000000000000); // Transfer tokens from sender to contract, external fees WILL apply, so be careful with distribution.
+        bank.transferFrom(msg.sender, address(this), 2000000000000000000000); // Transfer tokens from sender to contract, external fees WILL apply, so be careful with distribution.
 
         // update user validity
         if (user.validTill > 0) {
