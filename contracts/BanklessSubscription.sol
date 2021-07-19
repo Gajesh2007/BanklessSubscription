@@ -59,4 +59,13 @@ contract BanklessSubscription is Ownable, ERC721URIStorage {
         _setTokenURI(newItemId, 'https://ipfs.io/ipfs/QmTxdWhoiD1viXKyUThthcXVxYzWsp3FBCA3XcbiFpq8Ur?filename=bankless.png');
         return newItemId;
     }
+
+    function isValid(address _address) external returns (bool) {
+        UserInfo storage user = userInfo[msg.sender];
+        if (block.timestamp <= user.validTill) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
